@@ -2,7 +2,7 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-const create = (baseURL = 'https://api.github.com/') => {
+const create = (baseURL = 'http://ne523.mocklab.io/gettodo') => {
   // ------
   // STEP 1
   // ------
@@ -34,8 +34,10 @@ const create = (baseURL = 'https://api.github.com/') => {
   // Since we can't hide from that, we embrace it by getting out of the
   // way at this level.
   //
-  const getRoot = () => api.get('')
+  const getRoot = () => api.get('http://ne523.mocklab.io/todos')
   const getRate = () => api.get('rate_limit')
+  const getUser = (username) => api.get('search/users', {q: username})
+  const getUser = (username) => api.get('search/users', {q: username})
   const getUser = (username) => api.get('search/users', {q: username})
 
   // ------
